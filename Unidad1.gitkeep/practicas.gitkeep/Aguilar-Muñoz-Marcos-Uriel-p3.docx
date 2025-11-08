@@ -1,0 +1,57 @@
+# Practica 3 introduccion al poliformismo
+# Similar un sistema de cobro de al menos 4 tipos
+
+
+class pago_tarjeta:
+    def procesar_pago(self,cantidad):
+        return f"procesando pago de $ {cantidad} con tarjeta de debito/credito"
+    
+class paypal:
+        def procesar_pago(self,cantidad):
+         nombre = input("cual es tu nombre")
+         return f"procesando pago de $ {cantidad} con paypal: {nombre}"
+        
+class mastecard:
+         def procesar_pago(self,cantidad):
+                cantidad_total = cantidad + 20
+                return f"procesando pago de $ {cantidad_total} con mastecard"
+         
+class BBVA:
+          def procesar_pago(self,cantidad):
+           return f"procesando pago de $ {cantidad} con BBVA"
+          
+metodos_pago = [pago_tarjeta(),paypal(),mastecard(),BBVA()]
+
+#for m in metodos_pago:
+     #print(m.procesar_pago(500))
+
+
+# Actividad 1 
+# procesar diferente cantidades de cada opcion de pago: 
+# 100 con tarjeta,400 con paypal, 600 con deposito y 5000 con cheque   
+
+
+pago1 = pago_tarjeta()
+pago2 = paypal()
+pago3 = mastecard()
+pago4 = BBVA()
+
+print(pago1.procesar_pago(100))
+print(pago2.procesar_pago(400))
+print(pago3.procesar_pago(600))
+print(pago4.procesar_pago(5000))
+
+
+
+# Actividad 2
+# Agregar funcionalidad adicional 
+# a metodo procesar_pago() cuando sea deposito: sumar 20 (comision) a cantidad
+# Cuando sea paypal pedirle al usario su nombre:
+
+
+# ejecucion codigo
+procesando pago de $ 100 con tarjeta de debito/credito
+cual es tu nombreaguilar
+procesando pago de $ 400 con paypal: aguilar
+procesando pago de $ 620 con mastecard
+procesando pago de $ 5000 con BBVA
